@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment" style="margin: 50px; padding-top: 100px;">
+
+    <h4 class="ui horizontal divider header">
+        <i class="tag icon"></i>
+        <%= catalogues.name %> Details
+      </h4>
+      <p> Product details!</p>
+      <p><div class="ui huge header"> <%= catalogues.name %> </div></p>
+      <div class="item">
+        <img class="ui centered rounded image" src="data:image/<%=catalogues.image.contentType%>;base64, 
+        <%=catalogues.image.data.toString('base64')%>">
+      </div>
+      <h4 class="ui horizontal divider header">
+        <i class="bar chart icon"></i>
+        Product Details 
+      </h4>
+      <table class="ui definition table">
+        <tbody>
+          <tr>
+            <td class="two wide column">Name</td>
+            <td><%=catalogues.name %></td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td><%=catalogues.weight %>gm(s)</td>
+          </tr>
+          <tr>
+            <td>Type</td>
+            <td><%=catalogues.type %></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><strong>Rs.<%=catalogues.price %></strong></td>
+          </tr>
+        </tbody>
+        <% if(!currentUser){  %>
+            <a class="ui teal button" data-inverted="" data-tooltip="Proceed to Confirmation Page" data-position="bottom center" href="/orders/<%=catalogues._id%>/orderDetails"> <i class="tag icon"></i>Order Now</a>
+            <hr>
+        <%  }else{  %>
+            <a class="ui teal button" href="/catalogue/<%=catalogues._id%>/edit">Edit</a>
+            <br><hr>
+            <form id="delete" action="/catalogue/<%=catalogues._id%>?_method=DELETE" method="POST"><button class="ui red button">Delete</button></form> 
+        <% } %>
+      </table>
+    </div>
+
+<%- include("../partials/footer") %>

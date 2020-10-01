@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+
+
+<div class="ui main text container segment">
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui image header">
+        <div class="content">
+          Register your account
+        </div>
+      </h2>
+      <form action="/register" method="POST" class="ui large form">
+        <div class="ui stacked secondary  segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" placeholder="New Username">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <button type="submit" class="ui fluid large teal submit button">Register</button>
+        </div> 
+      </form>
+      </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
+
+
+

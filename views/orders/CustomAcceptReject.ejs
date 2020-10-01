@@ -1,0 +1,75 @@
+<%- include("../partials/header") %>
+
+<div style="margin: 20px;padding:50px;">
+
+<h4 class="ui horizontal divider header">
+    <i class="tag icon"></i>
+    Order by <%= customorders.custName %>
+  </h4>
+  <p>Ordered on:<%= customorders.created.toDateString() %> </p>
+  <h4 class="ui horizontal divider header">
+    <i class="bar chart icon"></i>
+    Order Details
+  </h4>
+  <table class="ui definition table">
+    <tbody>
+      <tr>
+        <td class="two wide column">Customer Name</td>
+        <td><%= customorders.custName %></td>
+      </tr>
+      <tr>
+        <td>Contact Number</td>
+        <td><%= customorders.PhNo %></td>
+      </tr>
+      <tr>
+        <td>Email Address</td>
+        <td><%= customorders.email %></td>
+      </tr>
+      <tr>
+        <td>Product Name</td>
+        <td><%= customorders.name %></td>
+      </tr>
+      <tr>
+        <td>Product Weight</td>
+        <td><%= customorders.weight %></td>
+      </tr>
+      <tr>
+        <td>Product Image</td>
+        <td><img class="ui centered rounded image" src="data:image/<%=customorders.image.contentType%>;base64, 
+          <%=customorders.image.data.toString('base64')%>"></td>
+      </tr>
+      <tr>
+        <td>Product Price</td>
+        <td><%= customorders.price %></td>
+      </tr>
+      <tr>
+        <td>Catogory</td>
+        <td><%= customorders.catogory %></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><%= customorders.type %></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="ui segment">
+    <div class="ui two column very relaxed grid">
+      <div class="column">
+      <p><a href="/admin/customOrders"><button class="ui fluid positive button">Keep</button></a></p>
+      </div>
+      <div class="column">
+        <form id="delete" action="/Customorders/<%=customorders._id%>?_method=DELETE" method="POST"><button class="ui fluid red button">Reject and Delete</button></form>
+      </div>
+    </div>
+    <div class="ui vertical divider">
+      or
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>
+
+

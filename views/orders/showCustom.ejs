@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+
+<% for (var i=0; i< customorders.length; i++) { %>
+
+<table class="ui unstackable striped table" style="padding-left:25px; padding-right:25px;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date Ordered</th>
+        <th>E-mail</th>
+        <th>Phone No.</th>
+        <th>Order Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= customorders[i].custName %></td>
+        <td><%= customorders[i].created.toDateString() %></td>
+        <td><%= customorders[i].email %></td>
+        <td><%= customorders[i].PhNo %></td>
+        <td><a href="/orders/<%=customorders[i]._id%>/CustomAcceptReject"><button class="ui orange button">View Details</button></a></td>
+      </tr>
+    </tbody>
+  </table> 
+<% } %>
+
+<%- include("../partials/footer") %>

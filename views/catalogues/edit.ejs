@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment" style="margin: 50px; padding-top: 100px;">
+    <div class="ui huge header">Edit <%-catalogues.name %></div>
+    <div class="ui medium bordered image"><img class="ui centered rounded image" src="data:image/<%=catalogues.image.contentType%>;base64, 
+        <%=catalogues.image.data.toString('base64')%>"></div>
+    <form action="/catalogue/<%=catalogues._id %>?_method=PUT" method="POST" class="ui form">
+        <div class="field"><label>Name</label> <input type="text" name="catalogue[name]" placeholder="Title" value="<%-catalogues.name%>" required> </div>
+        <div class="field"><label>Type</label><input type="text" name="catalogue[type]" placeholder="Type of product" value="<%-catalogues.type%>" required>  </div>
+        <div class="field"><label>Price</label><input type="text" name="catalogue[price]" placeholder="Price of Product" value="<%-catalogues.price%>" required>  </div>
+        <div class="field"><label>Weight(gms)</label><input type="text" name="catalogue[weight]" placeholder="Weight of Product" value="<%-catalogues.weight%>" required> </div>
+        <div class="field"><label>Catogory</label><input type="text" name="catalogue[catogory]" placeholder="Catogory" value="<%-catalogues.catogory%>" required> </div>
+        <button type="submit" class="ui teal button">Make Changes</button>
+            
+    </form>
+</div>
+
+
+
+<%- include("../partials/footer") %>
+
+

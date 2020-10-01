@@ -1,0 +1,66 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment" style="margin: 50px; padding-top: 100px;">
+    <div class="ui huge header">Order <%=catalogues.name %></div>
+    <img class="ui centered rounded image" src="data:image/<%=catalogues.image.contentType%>;base64, 
+    <%=catalogues.image.data.toString('base64')%>">
+       <hr>
+       <br>
+
+    <form action="/admin/orders" method="POST" class="ui form" enctype="multipart/form-data">
+      <div class="field">
+        <label>Product Name</label>
+        <input type="text" name="name" value="<%=catalogues.name%>" readonly>
+      </div> 
+      <div class="field">
+        <label>Product weight</label>
+        <input type="text" name="weight" value="<%=catalogues.weight%>" readonly>
+      </div> 
+
+      <div class="field">
+        <label>Product type</label>
+        <input type="text" name="type" value="<%=catalogues.name%>" readonly>
+      </div> 
+
+      <div class="field">
+        <label>Product Price</label>
+        <input type="text" name="price" value="<%=catalogues.price%>" readonly>
+      </div> 
+
+      <div class="field">
+        <label>Product Image</label>
+        <input type="text" name="image" value="<%=catalogues._id%>" readonly>  
+      </div> 
+<!-- ERROR HERE -->
+
+      <div class="field">
+        <label>Catogory</label>
+        <input type="text" name="catogory" value="<%=catalogues.catogory%>" readonly>
+      </div> 
+
+      <div class="field">
+          <label>First Name</label>
+          <input type="text" name="custName" placeholder="Name" required>
+      </div>
+      <div class="field">
+          <label>Contact Number</label>
+          <input type="number" name="PhNo" placeholder="Phone Number" required>
+      </div>
+      <div class="field">
+            <label>Email ID</label>
+            <input type="email" name="email" placeholder="Email ID">
+      </div>
+      <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" required>
+            <label>I agree to the Terms and Conditions</label>
+      </div>
+      </div>
+        <button class="ui button" type="submit">Submit Order!</button>
+    </form>
+</div>
+
+<%- include("../partials/footer") %>
+
+
+

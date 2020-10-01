@@ -1,0 +1,47 @@
+<%- include("../partials/header") %>
+
+
+<div class="ui main text container segment" style="margin: 50px; padding-top: 100px;">
+
+<h4 class="ui horizontal divider header">
+    <i class="tag icon"></i>
+    Confirm Product Details
+  </h4>
+  <p>Please check the product details!</p>
+  <p><div class="ui huge header"> <%= catalogues.name %> </div></p>
+  <div class="item">
+    <img class="ui centered rounded image" src="data:image/<%=catalogues.image.contentType%>;base64, 
+    <%=catalogues.image.data.toString('base64')%>">
+  </div>
+  <h4 class="ui horizontal divider header">
+    <i class="bar chart icon"></i>
+    Product Details 
+  </h4>
+  <table class="ui definition table">
+    <tbody>
+      <tr>
+        <td class="two wide column">Name</td>
+        <td><%=catalogues.name %></td>
+      </tr>
+      <tr>
+        <td>Weight</td>
+        <td><%=catalogues.weight %>gm(s)</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><%=catalogues.type %></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><%=catalogues.price %></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><%=catalogues.catogory %></td>
+      </tr>
+    </tbody>
+    <a class="ui teal button" data-inverted="" data-tooltip="Confirm your order" data-position="bottom center" href="/orders/<%=catalogues._id%>/confirm">Confirm Your Order!</a>
+  </table>
+</div>
+
+  <%- include("../partials/footer") %>

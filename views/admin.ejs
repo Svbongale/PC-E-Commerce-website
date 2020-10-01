@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+<!-- Body goes here -->
+
+    <div class="ui main text container">
+        <div class="ui huge header">Admin Panel</div>
+        <!-- grid comes here -->
+        <div class="ui three column grid">
+            <div class="column">
+              <div class="ui segment">
+                <a href="/admin/orders"><button class="fluid ui button">View Orders</button></a>
+            </div>
+            </div>
+            <div class="column">
+              <div class="ui segment">
+                <a href="/admin/customOrders"><button class="fluid ui button">View Custom Orders</button></a>
+            </div>
+            </div>
+            <div class="column">
+              <div class="ui segment">
+                <a href="/catalogue"><button class="fluid ui button">View/Edit catalogue</button></a>
+            </div>
+            </div>
+            <div class="column">
+              <div class="ui segment">
+                <a href="/catalogue/new"><button class="fluid ui button">Add Products</button></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+<%- include("partials/footer") %>
