@@ -8,19 +8,41 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
     </head>
     <body>
-        <div class="ui fluid inverted segment">
-            <div class="ui fluid inverted secondary pointing menu">
-              
-              <a class="item" href="/"><i class="home icon"></i></i>Go Home</a>
-              <div class="right menu">
-                <% if(!currentUser){  %>
-                  <li class="item"><i class="power off icon"></i><a class="nav-link" href="/login">Login</a></li>
-                  <li class="item"><i class="user plus icon"></i><a class="nav-link" href="/register">SignUp</a></li>
-                  <%  }else{  %>
-                  <a class="item" href="/admin"><i class="user secret icon"></i>Admin Panel</a>
-                  <li class="item"><i class="user secret icon"></i><a class="nav-link"></a>Signed in as <%= currentUser.username %></a></li>
-                  <li class="item"><i class="sign out alternate icon"></i><a class="nav-link" href="/logout">Logout</a></li>
-                <% } %>
-              </div>
+      <div class="ui container">
+        <div class="ui huge menu">
+          <a class="active item" href="/">
+            Home
+          </a>
+          <a class="item" href="/catalogue">
+            PC's
+          </a>
+          <a class="item" href="/catalogue">
+              PC Parts
+          </a>
+          <a class="item" href="/order/custom">
+              Custom Order
+          </a>
+          <div class="right menu">
+            <% if(!currentUser){  %>
+            <div class="item">
+                <a href="/register"><div class="ui primary button" >Sign Up</div></a>
             </div>
+            <div class="item">
+              <a href="/login"><div class="ui primary button">Login</div></a>
+            </div>
+          <%  }else{  %>
+            <a class="item" href="/admin">
+              Admin Panel
+          </a>
+          <div class="item">
+            <div>Signed in as <%= currentUser.username %></div> 
+          </div>
+          <div class="item">
+            <a href="/logout"><div class="ui primary button">Logout</div></a>
+          </div>
+          <% } %>
+          </div>
+
         </div>
+
+      </div>

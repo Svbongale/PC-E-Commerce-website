@@ -85,7 +85,7 @@ app.use(function(req, res, next) {
 // *****************************************************************
 
 app.get("/", function(req, res){
-    res.send("*******************************THIS WILL BE THE LANDING PAGE!********************************");
+    res.render("landing.ejs");
 });
 
 
