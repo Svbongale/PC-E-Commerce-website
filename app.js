@@ -49,6 +49,7 @@ var upload = multer({ storage: storage });
 // =================================================================
 
 app.use(express.static("public"));
+app.use(express.static("views"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method")); // Sanitizer must always come after body parser.
 app.use(expressSanitizer());  

@@ -10,7 +10,7 @@
     <div class="item">
       <div class="image">
         <img src="data:image/<%=catalogues[i].image.contentType%>;base64, 
-  <%=catalogues[i].image.data.toString('base64')%>">
+                    <%=catalogues[i].image.data.toString('base64')%>">
       </div>
       <div class="content">
         <a class="header" href="catalogue/<%=catalogues[i]._id%>"><%= catalogues[i].name %></a>
@@ -18,7 +18,7 @@
           <span class="cinema"><%= catalogues[i].type %></span>
         </div>
         <div class="description">
-          <p></p>
+         <u><b><p>Rs.<%= catalogues[i].price %>/-</p></b></u>
         </div>
 
 
