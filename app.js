@@ -475,8 +475,8 @@ function isLoggedIn(req, res,next){
 // LISTNER AND PORT CONFIGURATION
 // =================================================================
 
-app.listen(3000, function(){ 
-    console.log("This is the Sathyan-App");
-    console.log('Server listening on port 3000'); 
-  });
 
+app.listen(process.env.PORT, function() { 
+    console.log("This is the blog APP");
+    console.log('Server listening on port'); 
+});
