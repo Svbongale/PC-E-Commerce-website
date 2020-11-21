@@ -25,7 +25,7 @@ var path = require('path');
 // =================================================================
 // CONNECT MONGOOSE TO DB
 // =================================================================
-mongoose.connect("mongodb://localhost/PCApp",{useNewUrlParser:true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect("mongodb+srv://Svbongale:ssvvb2103@cluster0.mlf7n.mongodb.net/<dbname>?retryWrites=true&w=majority",{useNewUrlParser:true, useUnifiedTopology: true, useFindAndModify: false });
 
 
 var fs = require('fs'); 
